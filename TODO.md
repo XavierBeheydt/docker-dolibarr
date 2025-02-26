@@ -4,3 +4,4 @@
 
 - [ ] Prepare the networs tro be compatible with the future reverse proxy service.
 - [ ] Improve the makeefile recipes.
+- [ ] Mind to change env files in only one.
