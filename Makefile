@@ -23,6 +23,10 @@ test:
 up:  ## Build and start all or specific services
 	$(COMPOSE_CMD) up -d ${SERVICES}
 
+.PHONY: down
+down:  ## Stop and remove all or specific services
+	$(COMPOSE_CMD) down ${SERVICES}
+
 .PHONY: stop
 stop:  ## Stop all or specific services
 	$(COMPOSE_CMD) stop ${SERVICES}
