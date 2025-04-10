@@ -17,6 +17,7 @@ volumes:
 services:
     db:
         image: mariadb:latest
+        restart: always
         env_file:
             - .env/mariadb.env
         volumes:
@@ -28,6 +29,7 @@ services:
         depends_on:
             - db
         image: tuxgasy/dolibarr:${DOLI_TAG}
+        restart: always
         env_file:
             - .env/dolibarr.env
         ports:
