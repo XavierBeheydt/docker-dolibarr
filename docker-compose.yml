@@ -19,7 +19,7 @@ services:
         image: mariadb:latest
         container_name: dolibarr-db
         env_file:
-            - mariadb.env
+            - .env/mariadb.env
         volumes:
             - db-data:/var/lib/mysql
         networks:
@@ -31,7 +31,7 @@ services:
         image: tuxgasy/dolibarr:${DOLI_TAG}
         container_name: dolibarr-web
         env_file:
-            - dolibarr.env
+            - .env/dolibarr.env
         ports:
             - "${DOLI_PORT}:80"
         links:
