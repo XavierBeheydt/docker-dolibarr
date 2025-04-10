@@ -52,4 +52,4 @@ DB_DUMP ?=
 DB_PASSWORD ?=
 .PHONY: db/restore
 db/restore:  ## Restauring DB from SQL.GZ file
-	docker compose exec -i db mariadb --user root --password=${DB_PASSWORD} < ${DB_DUMP}
+	$(COMPOSE_CMD) exec -T db mariadb dolibarr -uroot -p${DB_PASSWORD} < ${DB_DUMP}
