@@ -52,4 +52,4 @@ DB_DUMP ?=
 DB_PASSWORD ?=
 .PHONY: db/restore
 db/restore:  ## Restauring DB from SQL.GZ file
-	$(COMPOSE_CMD) exec -T db mariadb dolibarr -uroot -p${DB_PASSWORD} < ${DB_DUMP}
+	$(COMPOSE_CMD) exec -T db mariadb -uroot -p${DB_PASSWORD} dolibarr < ${DB_DUMP}
